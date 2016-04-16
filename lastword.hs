@@ -1,3 +1,4 @@
+lastword :: String -> String
 lastword letters = foldl aux "" letters
   where
     aux "" letter = letter:[]
@@ -5,7 +6,7 @@ lastword letters = foldl aux "" letters
       | letter < l = acc ++ (letter:[])
       | otherwise = letter:acc
 
-doIt :: (Integer, [Char]) -> [Char]
+doIt :: (Integer, String) -> String
 doIt (i, s) = "Case #" ++ (show i) ++ ": " ++ (lastword s)
 
 main :: IO ()
